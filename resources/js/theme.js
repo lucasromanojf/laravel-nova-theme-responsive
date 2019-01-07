@@ -23,9 +23,21 @@ function load() {
   // Sidebar links click event
   var sidebarLinks = document.querySelectorAll('.w-sidebar a, .w-sidebar .cursor-pointer');
   sidebarLinks.forEach(function(sidebarLink) {
+    if (!sidebarLink.classList.contains('router-link-active')) {
+      sidebarLink.classList.add("cursor-pointer");
+    }
     sidebarLink.addEventListener("click", function() {
       var sidebar = document.querySelector('.w-sidebar');
       sidebar.classList.add("sidebar-hidden");
+
+      setTimeout(() => {
+        var sidebarLinks = document.querySelectorAll('.w-sidebar a');
+        sidebarLinks.forEach(function(sidebarLink) {
+          if (!sidebarLink.classList.contains('router-link-active')) {
+            sidebarLink.classList.add("cursor-pointer");
+          }
+        });
+      }, 1000);
     }, false);
   });
 
