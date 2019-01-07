@@ -239,6 +239,10 @@
     div[dusk$='detail-component'] > div > div.flex.items-center.mb-3 > div.ml-3.w-full.flex.items-center > div.ml-3 {
         margin-left: 0;
     }
+    
+    div[data-testid=confirm-action-modal] > div {
+        margin-top: 100px;
+    }
 }
 
 @media (max-width: 500px) {
